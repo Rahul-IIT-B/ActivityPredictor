@@ -39,7 +39,7 @@ ActivityPredictor is a React Native application that processes accelerometer and
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/ActivityPredictor.git
+   git clone https://https://github.com/Rahul-IIT-B/ActivityPredictor.git
    ```
 2. Navigate to the project directory:
    ```bash
