@@ -1,50 +1,84 @@
-# Welcome to your Expo app 👋
+# ActivityPredictor
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+ActivityPredictor is a React Native application that processes accelerometer and gyroscope signals from a smartphone to calculate features for activity recognition. The app aims to predict human activities by analyzing signal data using various signal processing techniques and machine learning.
 
-## Get started
+## Features Implemented
 
-1. Install dependencies
+1. **Real-Time Data Collection**:
 
+   - Collects accelerometer and gyroscope data using `expo-sensors`.
+   - Signals are updated at a 20ms interval.
+
+2. **Signal Processing**:
+
+   - Processes accelerometer and gyroscope data to compute time-domain and frequency-domain features using techniques such as statistical analysis, Fourier Transform for frequency analysis, and magnitude computation for signal interpretation.
+   - Supports features like magnitude, jerk, and frequency components.
+
+3. **Feature Extraction**:
+
+   - Extracts statistical and axis-based features using a custom feature extractor.
+
+4. **Feature Export**:
+
+   - The app allows exporting the extracted features. When the "Generate Feature Set" button is pressed, it opens the sharing dialogue for exporting the data conveniently.
+
+## Project Structure
+
+- **SignalProcessor.js**: Handles preprocessing of sensor data.
+- **FeatureExtractor.js**: Extracts meaningful features from the processed signals.
+- **App.js**: Main application file that integrates all components.
+
+## Tech Stack
+
+- **React Native**: Frontend framework for building cross-platform apps.
+- **Expo**: Toolchain for React Native development.
+- **expo-sensors**: Library for accessing accelerometer and gyroscope data.
+- **expo-file-system**: For file export functionality.
+
+## Installation
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/ActivityPredictor.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd ActivityPredictor
+   ```
+3. Install dependencies:
    ```bash
    npm install
    ```
-
-2. Start the app
-
+4. Start the application:
    ```bash
-    npx expo start
+   expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Future Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+1. **Feature Scaling**:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+   - Improve the current feature scaling implementation. A final scaling method is yet to be determined.
 
-## Get a fresh project
+2. **Activity Prediction**:
 
-When you're ready, run:
+   - Integrate a pre-trained machine learning model, such as a Support Vector Machine (SVM) or Logistic Regression, trained on the UCI HAR Dataset (a completed project) to predict human activities based on extracted features.
 
-```bash
-npm run reset-project
-```
+3. **Enhanced User Interface**:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+   - Add visualizations to display signal data (e.g., line charts for accelerometer and gyroscope readings) and extracted features (e.g., bar charts for feature comparisons).
+   - Create activity prediction results with a user-friendly interface.
 
-## Learn more
+4. **Advanced Export Options**:
 
-To learn more about developing your project with Expo, look at the following resources:
+   - Allow exporting feature sets in various formats, such as CSV or JSON, with options for both raw and processed data to suit different use cases.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Acknowledgments
 
-## Join the community
+- The UCI HAR Dataset used for training the machine learning model.
+- Expo documentation and community support for seamless React Native development.
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**Note**: Ensure all dependencies are installed, and necessary libraries for signal processing and feature extraction are updated before running the application.
+
