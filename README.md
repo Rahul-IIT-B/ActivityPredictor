@@ -26,7 +26,7 @@ ActivityPredictor is a React Native application that processes accelerometer and
 
 - **SignalProcessor.js**: Handles preprocessing of sensor data.
 - **FeatureExtractor.js**: Extracts meaningful features from the processed signals.
-- **App.js**: Main application file that integrates all components.
+- **App**: Main application folder containing the file index.tsx that integrates all components.
 
 ## Tech Stack
 
