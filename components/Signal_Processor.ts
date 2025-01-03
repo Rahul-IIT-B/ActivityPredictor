@@ -150,10 +150,14 @@ class SignalProcessor {
   ): ProcessedSignals {
     // Implement windowing with overlap
     const windows: SensorReading[][] = [];
-    for (let i = 0; i < readings.length - this.windowSize; i += this.windowSize/2) {
+    for (
+      let i = 0;
+      i < readings.length - this.windowSize;
+      i += this.windowSize / 2
+    ) {
       windows.push(readings.slice(i, i + this.windowSize));
     }
-    
+
     // Extract timestamps and axis data
     const timestamps = readings.map((r) => r.timestamp);
     const xData = readings.map((r) => r.x);

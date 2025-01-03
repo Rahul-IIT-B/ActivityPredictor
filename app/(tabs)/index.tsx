@@ -9,8 +9,8 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { Accelerometer, Gyroscope } from "expo-sensors";
-import SignalProcessor from "./Signal_Processor";
-import FeatureExtractor from "./featureExtraction";
+import SignalProcessor from "../../components/Signal_Processor";
+import FeatureExtractor from "../../components/featureExtraction";
 import * as FileSystem from "expo-file-system";
 import * as Sharing from "expo-sharing";
 
@@ -802,7 +802,10 @@ export default function App() {
               value >= 0
                 ? ` ${value.toExponential(7)}` // Add a leading space for positive values
                 : `${value.toExponential(7)}`; // Keep the negative sign for negative values
-            return formattedValue.replace(/e([+-])(\d{1,2})$/, 'e$1' + '$2'.padStart(4, '0'));
+            return formattedValue.replace(
+              /e([+-])(\d{1,2})$/,
+              "e$1" + "$2".padStart(4, "0")
+            );
           })
           .join(" ") // Join features with spaces
     );
